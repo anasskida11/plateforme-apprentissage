@@ -1,0 +1,31 @@
+# Système
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# PHP Composer
+/vendor/
+composer.lock
+
+# Environnement local
+.env
+.env.*
+
+# XAMPP et fichiers temporaires
+xampp/
+*.bak
+*.swp
+*.swo
+
+# IDE et éditeurs
+.vscode/
+.idea/
+*.code-workspace
+
+# Système d'exploitation
+node_modules/
+
+# Uploads et fichiers générés
+/uploads/
+/assets/images/generated/ 

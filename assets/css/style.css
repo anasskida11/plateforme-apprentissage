@@ -1,0 +1,344 @@
+/* Global Styles */
+:root {
+    --primary-color: #3498db;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --danger-color: #e74c3c;
+    --info-color: #1abc9c;
+    --secondary-color: #95a5a6;
+    --light-color: #f8f9fa;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --border-radius: 15px;
+    --box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background-color: #f0f8ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Welcome Section */
+.welcome-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 3rem;
+}
+
+.rainbow-text {
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 20s linear infinite;
+    background-size: 400%;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+/* Cards */
+.activity-card {
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+}
+
+.activity-card .card {
+    border-width: 3px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.activity-card:hover .card {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.activity-card:hover .icon-wrapper {
+    transform: scale(1.1);
+    background: rgba(0,0,0,0.1);
+}
+
+.activity-icon {
+    font-size: 2.5rem;
+    transition: var(--transition);
+}
+
+.activity-card:hover .activity-icon {
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.card-hover-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.activity-card:hover .card-hover-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 20px 0;
+    background-color: var(--light-color);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+/* Custom colors for different sections */
+.games-section { background-color: #ffe0e0; }
+.exercises-section { background-color: #e0ffe0; }
+.videos-section { background-color: #e0e0ff; }
+.lessons-section { background-color: #fff0e0; }
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .welcome-section {
+        padding: 2rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .card-text {
+        font-size: 1rem;
+    }
+    
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .activity-icon {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar, .footer, .btn {
+        display: none;
+    }
+    
+    body {
+        background: white;
+    }
+    
+    .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* Level Cards */
+.level-card {
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.level-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.maternelle-card {
+    background: linear-gradient(145deg, #fff6e5 0%, #ffe0b2 100%);
+}
+
+.scolaire-card {
+    background: linear-gradient(145deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.level-card .card-body {
+    padding: 2rem;
+}
+
+.level-card h2 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.level-card ul li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.level-card .btn {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.level-card .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Cards */
+.card {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom colors */
+.text-purple {
+    color: #9c27b0;
+}
+
+.btn-purple {
+    background-color: #9c27b0;
+    border-color: #9c27b0;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #7b1fa2;
+    border-color: #7b1fa2;
+    color: white;
+}
+
+.locked-content {
+    position: relative;
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.locked-content .card {
+    border: none;
+    background: transparent;
+}
+
+.locked-content .fa-lock {
+    color: #ffc107;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.locked-content .btn {
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.locked-content .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.locked-content .text-muted {
+    font-size: 1.1rem;
+    margin: 15px 0;
+} 
+} 
